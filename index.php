@@ -1,3 +1,3 @@
-teste 2<br>
-<?php echo ("teste3") ?><br>
-<?php echo(getenv('POSTGRESQL_HOST')); ?>
+teste 3<br>
+<?php echo ("teste4") ?><br>
+<?php echo(getenv('DATABASE_NAME')); ?>
