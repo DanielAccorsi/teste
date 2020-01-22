@@ -9,7 +9,7 @@ Vagrant.require_version ">= 1.7.2"
 # you're doing.
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "thesteve0/openshift-origin"
+  config.vm.box = "openshift/origin-all-in-one"
   # uncomment this line if you downloaded the box and want to use it instead
   # config.vm.box = "openshift3"
   config.vm.box_check_update = false
