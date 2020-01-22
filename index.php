@@ -1,14 +1,10 @@
-teste 3<br>
-<?php echo ("teste4") ?><br>
-<?php echo(getenv('DATABASE_NAME')); ?>
-
-
 <?php
+$db = getenv('DATABASE_NAME')
 $servername = getenv('DATABASE_HOST');
 $username = getenv('DATABASE_USER');
 $password = getenv('DATABASE_PASSWORD');
 
-echo ($servername." ".$username." ".$password);
+echo ($servername." ".$db." ".$username." ".$password."<br/><br/>");
 # phpinfo();
 
 $dbconn = pg_connect("host=".$servername." dbname=".getenv('DATABASE_NAME')." user=".$username." password=".$password)
