@@ -11,13 +11,7 @@ $password = getenv('DATABASE_PASSWORD');
 echo ($servername." ".$username." ".$password);
 phpinfo();
 
+$dbconn = pg_connect("host=".$servername." dbname=".getenv('DATABASE_NAME')." user=".$username." password=".$password)
+    or die('Could not connect: ' . pg_last_error());
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
 ?>
