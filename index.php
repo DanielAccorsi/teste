@@ -10,13 +10,13 @@ echo ($servername." ".$db." ".$username." ".$password."<br/><br/>");
 $dbconn = pg_connect("host=".$servername." dbname=".getenv('DATABASE_NAME')." user=".$username." password=".$password)
     or die('Could not connect: ' . pg_last_error());
 
-$query = 'SELECT * FROM user';
+$query = "SELECT * FROM public.user";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-    echo($line[0]."<br/>");
-    echo($line[1]."<br/>");
+    echo($line["id"]."<br/>");
+    echo($line["name"]."<br/>");
 }
 
 
