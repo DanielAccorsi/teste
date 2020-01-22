@@ -9,7 +9,7 @@ $username = getenv('DATABASE_USER');
 $password = getenv('DATABASE_PASSWORD');
 
 echo ($servername." ".$username." ".$password);
-phpinfo();
+# phpinfo();
 
 $dbconn = pg_connect("host=".$servername." dbname=".getenv('DATABASE_NAME')." user=".$username." password=".$password)
     or die('Could not connect: ' . pg_last_error());
@@ -17,5 +17,12 @@ $dbconn = pg_connect("host=".$servername." dbname=".getenv('DATABASE_NAME')." us
 $query = 'SELECT * FROM user';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-print_r($result);
+
+while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+    foreach ($line as $col_value) {
+        echo "\t\t$col_value\n";
+    }
+}
+
+
 ?>
