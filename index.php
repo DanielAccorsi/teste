@@ -4,9 +4,13 @@ teste 3<br>
 
 
 <?php
-$servername = getenv('DATABASE_NAME');
+$servername = getenv('DATABASE_HOST');
 $username = getenv('DATABASE_USER');
 $password = getenv('DATABASE_PASSWORD');
+
+echo ($servername." ".$username." ".$password);
+phpinfo();
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
