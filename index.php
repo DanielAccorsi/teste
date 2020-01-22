@@ -19,9 +19,8 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-    foreach ($line as $col_value) {
-        echo "\t\t$col_value\n";
-    }
+    echo($line[0]."<br/>");
+    echo($line[1]."<br/>");
 }
 
 
